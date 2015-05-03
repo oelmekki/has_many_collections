@@ -1,0 +1,40 @@
+{
+  "name": "has_many :collections",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "See which collections a product hunt post has been added to",
+
+  "permissions": [
+    "storage",
+    "tabs",
+    "https://www.producthunt.com/"
+  ],
+
+  "background": {
+    "persistent": false,
+    "scripts": [
+      "background_page/background.js",
+      "background_page/background/api.js",
+      "background_page/background/page_action_decider.js",
+      "background_page/main.js"
+    ]
+  },
+
+
+  "content_scripts": [
+    {
+      "matches": [ "http://localhost:3000/OAUTH_PATH*" ],
+      "js": [
+        "content_script/jquery.js",
+        "content_script/url.js",
+        "content_script/main.js"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+
+  "page_action": {
+    "default_icon": { "38": "icon.png" },
+    "default_popup": "page_action/main.html"
+  }
+}

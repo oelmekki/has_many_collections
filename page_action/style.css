@@ -1,0 +1,23 @@
+body { font-family: 'proxima-nova', 'Proxima Nova', sans-serif; }
+
+#waiting { text-align: center; padding: 50px 0; width: 472px; }
+
+
+#collections { list-style: none; padding: 0; display: none; }
+
+.collection { width: 450px; margin-bottom: 20px; }
+
+h1 { width: 450px; font-size: 20px; font-weight: 600; text-transform: uppercase; line-height: 24px; margin: 0l; margin-bottom: 10px; color: #534540; overflow: hidden; line-height: 34px; }
+#filter { float: right; border: 0; border-radius: 40px; padding: 7px 7px 7px 35px; height: 34px; font-size: 17px; box-shadow: inset 0 1px 2px 0 rgba(0,0,0,0.11),inset 0 0 0 1px rgba(0,0,0,0.13); display: none; width: 250px; margin-bottom: 25px; }
+#filter:focus { outline: 0; }
+
+.collection.error { text-align: center; }
+.collection a { display: block; text-decoration: none; padding: 5px 10px; }
+.collection a:hover { background-color: #fcf5e2; }
+.collection .count { float: right; color: #bbb; font-size: 16px; }
+.collection h2 { color: #534540; font-size: 20px; font-weight: 600; line-height: 22px; }
+.collection a:visited h2 { color: #bbb; }
+
+.collection img, .collection .user_name { vertical-align: middle; }
+.collection img { display: inline-block; margin-right: 10px; border-radius: 25px; width: 30px; height: 30px; }
+.collection .user_name { color: #999; font-size: 17px; }
