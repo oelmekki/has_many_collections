@@ -7,7 +7,8 @@
   "permissions": [
     "storage",
     "tabs",
-    "https://www.producthunt.com/"
+    "https://www.producthunt.com/",
+    "http://www.producthunt.com/"
   ],
 
   "background": {
@@ -23,7 +24,10 @@
 
   "content_scripts": [
     {
-      "matches": [ "http://localhost:3000/OAUTH_PATH*" ],
+      "matches": [
+        "http://OAUTH_DOMAINOAUTH_PATH*",
+        "http://localhost:3000OAUTH_PATH*"
+      ],
       "js": [
         "content_script/jquery.js",
         "content_script/url.js",

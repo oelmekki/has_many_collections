@@ -6,7 +6,7 @@ class Background.PageActionDecider
 
 
   # Tell if we're on a product page
-  is_product_url: -> @tab.url.match /^https:\/\/www.producthunt.com\/posts\//
+  is_product_url: -> @tab.url.match /^https?:\/\/www.producthunt.com\/posts\//
 
   # Ensure we have api access
   check_authorization: ->

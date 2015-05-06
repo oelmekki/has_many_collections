@@ -15,7 +15,7 @@
     };
 
     PageActionDecider.prototype.is_product_url = function() {
-      return this.tab.url.match(/^https:\/\/www.producthunt.com\/posts\//);
+      return this.tab.url.match(/^https?:\/\/www.producthunt.com\/posts\//);
     };
 
     PageActionDecider.prototype.check_authorization = function() {

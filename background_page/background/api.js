@@ -67,7 +67,7 @@
 
     Api.prototype.get_token = function() {
       return chrome.tabs.create({
-        url: 'http://localhost:3000/has_many_collections/authorize'
+        url: "http://" + Background.oauth_domain + "OAUTH_PATH"
       }, function(tab) {
         return Background.last_tab = tab;
       });

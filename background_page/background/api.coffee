@@ -45,5 +45,5 @@ class Background.Api
 
 
   valid_token: ( token ) -> token and token.created_at + ( token.expires_in * 1000 ) > new Date().getTime()
-  get_token: -> chrome.tabs.create( url: 'http://localhost:3000/has_many_collections/authorize', ( tab ) -> Background.last_tab = tab )
+  get_token: -> chrome.tabs.create( url: "http://#{Background.oauth_domain}OAUTH_PATH", ( tab ) -> Background.last_tab = tab )
 
