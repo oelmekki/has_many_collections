@@ -2,13 +2,15 @@ body { font-family: 'proxima-nova', 'Proxima Nova', sans-serif; }
 
 #waiting { text-align: center; padding: 50px 0; width: 472px; }
 
+#hide-save-for-later { float: right; text-align: right; margin-top: 0; font-size: 12px; }
+#results-count { color: #999; font-size: 16px; margin-bottom: 0; }
 
-#collections { list-style: none; padding: 0; display: none; }
+#collections { list-style: none; padding: 0; }
 
 .collection { width: 450px; margin-bottom: 20px; }
 
 h1 { width: 450px; font-size: 20px; font-weight: 600; text-transform: uppercase; line-height: 24px; margin: 0l; margin-bottom: 10px; color: #534540; overflow: hidden; line-height: 34px; }
-#filter { float: right; border: 0; border-radius: 40px; padding: 7px 7px 7px 35px; height: 34px; font-size: 17px; box-shadow: inset 0 1px 2px 0 rgba(0,0,0,0.11),inset 0 0 0 1px rgba(0,0,0,0.13); display: none; width: 250px; margin-bottom: 25px; }
+#filter { float: right; border: 0; border-radius: 40px; padding: 7px 7px 7px 35px; height: 34px; font-size: 17px; box-shadow: inset 0 1px 2px 0 rgba(0,0,0,0.11),inset 0 0 0 1px rgba(0,0,0,0.13); width: 250px; margin-bottom: 25px; }
 #filter:focus { outline: 0; }
 
 .collection.error { text-align: center; }
@@ -21,3 +23,6 @@ h1 { width: 450px; font-size: 20px; font-weight: 600; text-transform: uppercase;
 .collection img, .collection .user_name { vertical-align: middle; }
 .collection img { display: inline-block; margin-right: 10px; border-radius: 25px; width: 30px; height: 30px; }
 .collection .user_name { color: #999; font-size: 17px; }
+
+#contact { color: #999; text-align: right; }
+#contact a { color: #534540; text-decoration: none; }
