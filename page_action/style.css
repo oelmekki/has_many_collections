@@ -1,4 +1,9 @@
-body { font-family: 'proxima-nova', 'Proxima Nova', sans-serif; }
+@font-face {
+  font-family: "montserrat";
+  src: url( '../Montserrat-Regular.ttf' ) format( 'truetype' );
+}
+
+body { font-family: 'montserrat', sans-serif; }
 
 #waiting { text-align: center; padding: 50px 0; width: 472px; }
 
