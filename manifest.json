@@ -1,8 +1,13 @@
 {
-  "name": "has_many :collections",
+  "name": "has_many collections",
   "version": "1.0",
   "manifest_version": 2,
   "description": "See which collections a product hunt post has been added to",
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
 
   "permissions": [
     "storage",
