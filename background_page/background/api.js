@@ -32,7 +32,10 @@
       chrome.storage.sync.set({
         ph_access_token: ph_resp
       });
-      return chrome.tabs.remove(Background.last_tab.id);
+      chrome.tabs.update(Background.last_tab.id, {
+        highlighted: true
+      });
+      return chrome.tabs.remove(Background.oauth_tab.id);
     };
 
     Api.prototype.retrieve_collections = function(id, callback) {
@@ -66,10 +69,15 @@
     };
 
     Api.prototype.get_token = function() {
-      return chrome.tabs.create({
-        url: "http://" + Background.oauth_domain + "OAUTH_PATH"
-      }, function(tab) {
-        return Background.last_tab = tab;
+      return chrome.tabs.query({
+        active: true
+      }, function(tabs) {
+        Background.last_tab = tabs[0];
+        return chrome.tabs.create({
+          url: "http://" + Background.oauth_domain + "OAUTH_PATH"
+        }, function(tab) {
+          return Background.oauth_tab = tab;
+        });
       });
     };
 

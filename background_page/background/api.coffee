@@ -18,7 +18,8 @@ class Background.Api
   persist_token: ( ph_resp ) ->
     ph_resp.created_at = new Date().getTime()
     chrome.storage.sync.set( ph_access_token: ph_resp )
-    chrome.tabs.remove( Background.last_tab.id )
+    chrome.tabs.update( Background.last_tab.id, { highlighted: true })
+    chrome.tabs.remove( Background.oauth_tab.id )
     
 
   retrieve_collections: ( id, callback ) ->
@@ -41,9 +42,13 @@ class Background.Api
       xhr.setRequestHeader( 'Authorization', "Bearer #{token.access_token}" )
       xhr.send()
     )
-    
 
 
   valid_token: ( token ) -> token and token.created_at + ( token.expires_in * 1000 ) > new Date().getTime()
-  get_token: -> chrome.tabs.create( url: "http://#{Background.oauth_domain}OAUTH_PATH", ( tab ) -> Background.last_tab = tab )
+
+  get_token: ->
+    chrome.tabs.query({ active: true }, ( tabs ) ->
+      Background.last_tab = tabs[0]
+      chrome.tabs.create( url: "http://#{Background.oauth_domain}OAUTH_PATH", ( tab ) -> Background.oauth_tab = tab )
+    )
 
